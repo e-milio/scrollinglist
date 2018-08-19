@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' , content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,500,700')
+        link(rel='stylesheet', href='../css/app.css')
+        script(src='https://www.gstatic.com/firebasejs/5.3.1/firebase.js')
+        script(src='../js/jquery.min.js')
+    body.prim
+        .this_quest
+            .form
+                p Hola, tengo curiosidad por saber, ¿Dónde has sentido pérdida en la ciudad? Es decir, ¿en qué parte de la ciudad sientes que has perdido un lugar? Como se llamaba ese lugar?
+                .input-group
+                    textarea(type="text" id="title")
+                p Si desea, siéntase libre de identificarse como le gustaría, por nombre, grupo, persona o afiliación a continuación.
+                .input-group
+                    textarea(type="text" id="name")
+                .input-group
+                    button(id="SendToFirebase" disabled) Submit
+
+        .langs
+            a(href="./../en/1.html") English
+            a(href="./../es/1.html") Español
+            a(href="./../zh/1.html") 漢語
+        .message.success#success
+            .wrapper
+                h1 Thanks you!
+                p Your entry has been added to our database on view in the North-East corner of the museum.
+                em This message will auto-dismiss in 4 seconds
+    script(src='../js/app.js')

@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' , content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,500,700')
+        link(rel='stylesheet', href='css/app.css')
+        script(src='https://www.gstatic.com/firebasejs/5.3.1/firebase.js')
+        script(src='js/jquery.min.js')
+        script(src="js/ScrollMagic.min.js")
+        script(src="js/plugins/debug.addIndicators.min.js")
+        script(src="js/tweenmax/jquery.gsap.min.js")
+        script(src="js/tweenmax/CSSPlugin.min.js")
+        script(src="js/tweenmax/EasePack.min.js")
+        script(src="js/tweenmax/TimelineLite.min.js")
+        script(src="js/tweenmax/TimelineMax.min.js")
+        script(src="js/tweenmax/TweenLite.min.js")
+        script(src="js/tweenmax/TweenMax.min.js")
+        script(src="js/animation.gsap.js")
+        script(src="js/ani.js")
+
+        script().
+            // Initialize Firebase
+            const config = {
+                apiKey: "AIzaSyCYhRCoL69Fq5lqldWDQoJhgLbB0Y1b3fw",
+                authDomain: "scrolling-list.firebaseapp.com",
+                databaseURL: "https://scrolling-list.firebaseio.com",
+                projectId: "scrolling-list",
+                storageBucket: "scrolling-list.appspot.com",
+                messagingSenderId: "765420066698"
+            };
+            firebase.initializeApp(config);
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var database = firebase.database();
+                var credits = database.ref('credits').orderByChild('date');
+                var creditList = document.getElementById('credits');
+
+                credits.on('child_added', function (snapshot) {
+                    addCredit(snapshot.val());
+                });
+
+                function init(data) {
+                    for (var key in data) {
+                        addCredit(data[key]);
+                    }
+                }
+
+                function addCredit(data) {
+                    var article = document.createElement('p');
+                    article.className=".p";
+                    var name = document.createElement('strong');
+                    name.innerHTML = data.name;
+                    article.appendChild(name);
+                    if (data.title) {
+                        var title = document.createElement('em');
+                        title.innerHTML = data.title;
+                        article.appendChild(title);
+                    }
+                    creditList.appendChild(article);
+                }
+
+                $('.play').on("click", function () {
+                    $(this).addClass("hide");
+                    $('.credits').addClass("playme");
+                    console.log( $('.credits').height() );
+                    var wiHeight = $('.wrapper').height();
+                    var myHeight = $('.credits').height();
+                    TweenLite.defaultEase = Power0.easeNone;
+                    TweenMax.fromTo(".credits", 200, {top: wiHeight}, {
+                        top: -myHeight,
+                        ease: Power0.easeNone,
+                        repeat: -1,
+                        repeatDelay: 0
+                    })
+                });
+            });
+    body.creds
+        .play
+        .wrapper
+            .credits#credits

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700">
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script src="../js/jquery.min.js"></script>
+  </head>
+  <body class="secun">
+    <div class="this_quest">
+      <div class="form">
+        <p>Where in your body do you remember a place you no longer can visit?</p>
+        <div class="input-group">
+          <textarea type="text" id="title"></textarea>
+        </div>
+        <p>If you would like, feel free to identify yourself however you would like, by name, group, persona, or affiliation below.</p>
+        <div class="input-group">
+          <textarea type="text" id="name"></textarea>
+        </div>
+        <div class="input-group">
+          <button id="SendToFirebase" disabled>Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="langs"><a href="./../en/2.html">English</a><a href="./../es/2.html">Español</a><a href="./../zh/2.html">漢語</a></div>
+    <div class="message success" id="success">
+      <div class="wrapper">
+        <h1>Thanks you!</h1>
+        <p>Your entry has been added to our database on view in the North-East corner of the museum.</p><em>This message will auto-dismiss in 4 seconds</em>
+      </div>
+    </div>
+  </body>
+  <script src="../js/app.js"></script>
+</html>

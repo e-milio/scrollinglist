@@ -1,0 +1,31 @@
+{
+  "name": "iftheyareok_gulp",
+  "version": "1.0.0",
+  "description": "paquete gulp para iytheyareok",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-beautify": "^2.0.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/diegokaiser85/iftheyareok.git"
+  },
+  "keywords": [
+    "iftheyareok"
+  ],
+  "author": "Diego Cáceres-Cardoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/diegokaiser85/iftheyareok/issues"
+  },
+  "homepage": "https://gitlab.com/diegokaiser85/iftheyareok#README"
+}
