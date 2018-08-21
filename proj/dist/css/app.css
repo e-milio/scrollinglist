@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+body {
+  align-items: center;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+body.logs {
+  background: radial-gradient(circle at top center, #F5F5F5 0%, #E0E0E0 100%);
+}
+
+body.log {
+  background: radial-gradient(circle at top center, #F5F5F5 0%, #E0E0E0 100%);
+}
+
+body.log .form {
+  width: 420px;
+}
+
+body.log .form button {
+  width: 100%;
+}
+
+body.creds {
+  background: radial-gradient(circle at top center, #000 0%, #000 100%);
+  height: auto;
+}
+
+body.prim {
+  background: radial-gradient(circle at top center, #CD7874 0%, #AF5A6E 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+body.secun {
+  background: radial-gradient(circle at top center, #7D85D4 0%, #5F67D4 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+body.terce {
+  background: radial-gradient(circle at top center, #D28C9E 0%, #B46E94 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+input:focus, input:visited, input:hover,
+select:focus,
+select:visited,
+select:hover,
+button:focus,
+button:visited,
+button:hover,
+a:focus,
+a:visited,
+a:hover {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus, a:visited, a:hover {
+  text-decoration: none;
+}
+
+.form {
+  margin-right: 210px;
+  width: 860px;
+}
+
+.form p {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 0;
+  margin-top: 42px;
+}
+
+.form .input-group {
+  margin-top: 14px;
+}
+
+.form .input-group:nth-child(1) {
+  margin-top: 0;
+}
+
+.form .input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.form .input-group input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #333333;
+  font-size: 14px;
+  height: 24px;
+  padding: 6px 14px;
+  resize: none;
+  width: calc(100% - 30px);
+}
+
+.form .input-group input:focus {
+  outline: none;
+}
+
+.form .input-group textarea {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #333333;
+  color: white;
+  font-size: 28px;
+  height: 80px;
+  line-height: 32px;
+  padding: 6px 0;
+  resize: none;
+  width: 100%;
+}
+
+.form .input-group textarea:focus {
+  outline: none;
+}
+
+.form .input-group button {
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 2px solid #333333;
+  color: #333333;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  height: 36px;
+  justify-content: center;
+  margin-top: 49px;
+  text-transform: uppercase;
+  width: 140px;
+  transition: 0.45s ease;
+}
+
+.form .input-group button.hide {
+  opacity: 0;
+}
+
+.form .input-group button:hover {
+  background-color: white;
+}
+
+.form .input-group button[disabled] {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.form .input-group button[disabled].hide {
+  opacity: 0;
+}
+
+.form .input-group button[disabled]:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #333333;
+}
+
+.quest {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.quest .item {
+  background-color: #616161;
+  border: 2px solid #212121;
+  height: 70px;
+  padding: 21px;
+  width: calc(18% - 21px);
+}
+
+.quest .item:nth-child(1) {
+  background-color: #CD7874;
+  border: 2px solid #AF5A6E;
+}
+
+.quest .item:nth-child(1) a {
+  color: #ffffff;
+  text-align: center;
+}
+
+.quest .item:nth-child(2) {
+  background-color: #7D85D4;
+  border: 2px solid #5F67D4;
+}
+
+.quest .item:nth-child(2) a {
+  color: #ffffff;
+  text-align: center;
+}
+
+.quest .item:nth-child(3) {
+  background-color: #D28C9E;
+  border: 2px solid #B46E94;
+}
+
+.quest .item:nth-child(3) a {
+  color: #ffffff;
+  text-align: center;
+}
+
+.quest .item a {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-weight: 600;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.quest .item a p {
+  font-size: 14px;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.credits {
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin: 0 auto;
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  width: 960px;
+}
+
+.credits.playme {
+  opacity: 1;
+}
+
+.credits .title {
+  font-size: 50px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.credits p {
+  align-content: flex-start;
+  display: flex;
+  justify-content: center;
+}
+
+.credits p strong {
+  align-content: flex-start;
+  display: flex;
+  font-size: 35px;
+  justify-content: flex-end;
+  margin-bottom: 28px;
+  margin-right: 35px;
+  text-align: right;
+  width: 45%;
+}
+
+.credits p em {
+  align-items: flex-start;
+  display: flex;
+  font-size: 35px;
+  font-style: normal;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+  text-align: left;
+  width: 55%;
+}
+
+.langs {
+  border: 2px solid #333333;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 70px;
+  top: 70px;
+  width: 140px;
+}
+
+.langs a {
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-top: 2px solid #333333;
+  color: #333333;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  line-height: 14px;
+  justify-content: center;
+  padding: 11px 0;
+  width: 100%;
+  transition: 0.45s ease;
+}
+
+.langs a:hover {
+  background-color: white;
+}
+
+.langs a:nth-child(1) {
+  border-top: 0;
+}
+
+.message {
+  opacity: 0;
+  width: 860px;
+  transition: 0.45s ease;
+}
+
+.message.in {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  z-index: 999;
+}
+
+.message .wrapper {
+  height: auto;
+}
+
+.message .wrapper h1 {
+  font-size: 28px;
+  margin: 0 0 21px 0;
+}
+
+.message .wrapper p {
+  font-size: 14px;
+  margin: 0 0 7px 0;
+}
+
+.message .wrapper em {
+  display: block;
+  font-size: 12px;
+}
+
+.play {
+  background-color: white;
+  cursor: pointer;
+  height: 42px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 42px;
+  z-index: 99;
+}
+
+.play.hide {
+  background-color: black;
+  cursor: default;
+  opacity: 0;
+}
