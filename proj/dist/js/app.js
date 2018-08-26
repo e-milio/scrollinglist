@@ -10,6 +10,15 @@
     };
     firebase.initializeApp(config);
 
+    firebase.auth().onAuthStateChanged( firebaseUser => {
+        if(firebaseUser) {
+            console.log("user is auth");
+        } else {
+            console.log("user is not auth");
+            window.location = 'index.html';
+        }
+    });
+
     var database = firebase.database();
     var credits = database.ref('credits');
 
