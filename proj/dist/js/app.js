@@ -15,7 +15,7 @@
             console.log("user is auth");
         } else {
             console.log("user is not auth");
-            window.location = 'index.html';
+            window.location = '../index.html';
         }
     });
 
