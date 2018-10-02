@@ -42,10 +42,6 @@ if($_POST){
         <tr>
             <td>
                 <p>Sincerely,</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <p>Emilio Martínez Poppe</p>
             </td>
         </tr>

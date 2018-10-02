@@ -4,7 +4,6 @@ body {
   align-items: center;
   display: flex;
   font-family: Helvetica, sans-serif;
-  height: 100vh;
   justify-content: center;
   margin: 0;
   overflow-x: hidden;
@@ -54,15 +53,42 @@ body.creds {
 
 body.prim {
   display: block;
-  height: initial;
+  flex-wrap: wrap;
+}
+
+body.prim .form .input-group textarea {
+  color: #1eca24;
+}
+
+body.prim .form .input-group button:hover {
+  border: 2px solid #1eca24;
+  color: #1eca24;
 }
 
 body.secun {
   display: block;
 }
 
+body.secun .form .input-group textarea {
+  color: #983efb;
+}
+
+body.secun .form .input-group button:hover {
+  border: 2px solid #983efb;
+  color: #983efb;
+}
+
 body.terce {
   display: block;
+}
+
+body.terce .form .input-group textarea {
+  color: #fe53ab;
+}
+
+body.terce .form .input-group button:hover {
+  border: 2px solid #fe53ab;
+  color: #fe53ab;
 }
 
 input:focus, input:visited, input:hover,
@@ -199,6 +225,7 @@ a:focus, a:visited, a:hover {
 }
 
 .form {
+  min-height: 640px;
   width: 100%;
 }
 
@@ -232,9 +259,16 @@ a:focus, a:visited, a:hover {
 }
 
 .form .input-group.btn {
+  align-items: center;
+  background-color: #ffffff;
+  bottom: 0;
   display: flex;
+  height: 100px;
   justify-content: flex-end;
-  position: relative;
+  left: 0;
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .form .input-group.btn.mod {
@@ -242,14 +276,17 @@ a:focus, a:visited, a:hover {
 }
 
 .form .input-group.btn .leg {
-  bottom: 0;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   left: 50%;
-  margin-bottom: 7px;
   position: absolute;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.form .input-group.btn button {
+  margin-top: 0;
 }
 
 .form .input-group.auth {
@@ -322,8 +359,8 @@ a:focus, a:visited, a:hover {
   color: #fe53ab;
   font-family: Georgia, serif;
   font-size: 28px;
-  height: 80px;
   line-height: 32px;
+  min-height: 80px;
   outline: none;
   overflow: hidden;
   padding: 6px 0;
@@ -362,7 +399,7 @@ a:focus, a:visited, a:hover {
 
 .form .input-group button[disabled] {
   cursor: not-allowed;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .form .input-group button[disabled].hide {
@@ -386,25 +423,28 @@ a:focus, a:visited, a:hover {
 
 .this_quest {
   font-family: Georgia, serif;
-  height: initial;
   margin: 0 auto;
   position: relative;
-  width: 960px;
+  width: 920px;
 }
 
 .this_quest .step_uno,
 .this_quest .step_dos,
 .this_quest .step_tres {
   left: 1200px;
-  margin-top: 140px;
-  min-height: 485px;
   opacity: 0;
-  padding-bottom: 140px;
   position: absolute;
   top: 0;
   visibility: hidden;
   width: 100%;
   transition: 0.45s ease;
+}
+
+.this_quest .step_uno .form,
+.this_quest .step_dos .form,
+.this_quest .step_tres .form {
+  margin-top: 140px;
+  position: relative;
 }
 
 .this_quest .step_uno.active,
@@ -588,7 +628,7 @@ a:focus, a:visited, a:hover {
 
 .credits {
   color: #fff;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: Georgia, serif;
   margin: 0 auto;
   opacity: 0;
   position: relative;

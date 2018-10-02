@@ -14,10 +14,10 @@
         if (firebaseUser) {
             console.log("user is auth");
             var database = firebase.database();
-            var credits = database.ref('credits').orderByChild('date');
-            var creditList = document.getElementById('credits');
+            var credits = database.ref("credits").orderByChild("date");
+            var creditList = document.getElementById("credits");
 
-            credits.on('child_added', function(snapshot) {
+            credits.on("child_added", function(snapshot) {
                 addCredit(snapshot.val());
             });
 
@@ -28,39 +28,44 @@
             }
 
             function addCredit(data) {
-                var article = document.createElement('p');
+                var article = document.createElement("p");
                 article.className = ".p";
-                var name = document.createElement('strong');
+                var name = document.createElement("strong");
                 name.innerHTML = data.name;
                 article.appendChild(name);
                 if (data.title) {
-                    var title = document.createElement('em');
+                    var title = document.createElement("em");
                     title.innerHTML = data.title;
                     article.appendChild(title);
                 }
                 creditList.appendChild(article);
             }
 
-            $('.playit').on("click", function() {
+            $(".playit").on("click", function() {
                 $(this).addClass("hide");
-                $('.credits').addClass("playme");
-                console.log($('.credits').height());
-                var wiHeight = $('.wrapper').height();
-                var myHeight = $('.credits').height();
+                $(".credits").addClass("playme");
+                console.log($(".credits").height());
+                var wiHeight = $(".wrapper").height();
+                var myHeight = $(".credits").height();
                 TweenLite.defaultEase = Power0.easeNone;
-                TweenMax.fromTo(".credits", 180, {
-                    top: wiHeight
-                }, {
-                    top: -myHeight,
-                    ease: Power0.easeNone,
-                    repeat: -1,
-                    repeatDelay: 0
-                })
+                TweenMax.fromTo(
+                    ".credits",
+                    200, {
+                        top: wiHeight
+                    }, {
+                        top: -myHeight,
+                        ease: Power0.easeNone,
+                        repeat: -1,
+                        repeatDelay: 0
+                    }
+                );
             });
 
-            $('.playit').promise().done(function() {
-                //$('.playit').trigger("click");
-            });
+            $(".playit")
+                .promise()
+                .done(function() {
+                    //$('.playit').trigger("click");
+                });
         }
     });
-}());
+})();
