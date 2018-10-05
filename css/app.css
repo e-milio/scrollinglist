@@ -12,14 +12,17 @@ body {
 
 body.logs {
   background-color: #ffffff;
+  min-height: 100vh;
 }
 
 body.log {
   background-color: #ffffff;
+  min-height: 100vh;
 }
 
 body.log .form {
   font-family: Helvetica, sans-serif;
+  min-height: initial;
   width: 500px;
 }
 
@@ -51,25 +54,50 @@ body.creds {
   height: auto;
 }
 
+body.creds::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #000000;
+}
+
+body.creds::-webkit-scrollbar {
+  background-color: #000000;
+  width: 2px;
+}
+
+body.creds::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+
+body.creds .wrapper {
+  overflow: initial;
+  width: 100%;
+}
+
 body.prim {
   display: block;
   flex-wrap: wrap;
 }
 
-body.prim .form .input-group textarea {
-  color: #1eca24;
+body.prim .form .input-group textarea,
+body.prim .form .input-group input {
+  color: #22c48e;
 }
 
 body.prim .form .input-group button:hover {
-  border: 2px solid #1eca24;
-  color: #1eca24;
+  border: 2px solid #22c48e;
+  color: #22c48e;
+}
+
+body.prim .side .side-content .langs a:hover {
+  color: #22c48e;
 }
 
 body.secun {
   display: block;
 }
 
-body.secun .form .input-group textarea {
+body.secun .form .input-group textarea,
+body.secun .form .input-group input {
   color: #983efb;
 }
 
@@ -78,16 +106,25 @@ body.secun .form .input-group button:hover {
   color: #983efb;
 }
 
+body.secun .side .side-content .langs a:hover {
+  color: #983efb;
+}
+
 body.terce {
   display: block;
 }
 
-body.terce .form .input-group textarea {
+body.terce .form .input-group textarea,
+body.terce .form .input-group input {
   color: #fe53ab;
 }
 
 body.terce .form .input-group button:hover {
   border: 2px solid #fe53ab;
+  color: #fe53ab;
+}
+
+body.terce .side .side-content .langs a:hover {
   color: #fe53ab;
 }
 
@@ -256,6 +293,10 @@ a:focus, a:visited, a:hover {
 
 .form .input-group:nth-child(1) {
   margin-top: 0;
+}
+
+.form .input-group.pb {
+  padding-bottom: 110px;
 }
 
 .form .input-group.btn {
@@ -656,6 +697,7 @@ a:focus, a:visited, a:hover {
   align-content: flex-start;
   display: flex;
   font-size: 35px;
+  font-weight: normal;
   justify-content: flex-end;
   margin-bottom: 28px;
   margin-right: 35px;

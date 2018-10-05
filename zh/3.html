@@ -8,29 +8,89 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script src="../js/jquery.min.js"></script>
   </head>
-  <body class="terce">
+  <body class="prim">
     <div class="this_quest">
-      <div class="form">
-        <p>一天中大部分时间注意力在哪里？是公开还是私下关注？</p>
-        <div class="input-group">
-          <textarea type="text" id="title"></textarea>
+      <div class="step_uno active">
+        <div class="form">
+          <p>记住一个你感觉到强烈归属感的地方，一个不再存在的地方。在呼吸时花一点时间感受自己。当你感觉自己在那个地方时，请注意你身体的任何感觉。是否有收紧或释放的肌肉？你的任何一部分是否感到饱满或空虚？温暖还是凉爽？固体还是液体？移动还是静止？内存在哪里？</p>
+          <div class="input-group">
+            <textarea type="text" id="title" name="title" max-length="1500"></textarea>
+          </div>
+          <p>这个地方叫什么名字？如果它没有名称描述它。那里发生了什么？</p>
+          <div class="input-group pb">
+            <textarea type="text" id="name" name="name" max-length="1500"></textarea>
+          </div>
+          <div class="input-group btn">
+            <div class="leg">1 / 3</div>
+            <button id="step_uno" disabled>Next</button>
+          </div>
         </div>
-        <p>如果您愿意，可以随意通过下面的名称，群组，角色或联盟来表明自己的想法。</p>
-        <div class="input-group">
-          <textarea type="text" id="name"></textarea>
+      </div>
+      <div class="step_dos">
+        <div class="form">
+          <p>如果您希望收到您的写作副本以及有关此项目的一些信息，请填写下面的字段。如果没有，请继续下一部分。</p>
+          <p>名称</p>
+          <div class="input-group">
+            <input type="text" id="uname" name="uname">
+          </div>
+          <p>电子邮件</p>
+          <div class="input-group pb">
+            <input type="text" id="uemail" name="uemail">
+          </div>
+          <u>收集的信息仅用于收集时定义的目的。您的信息不会与任何第三方共享。</u>
+          <div class="input-group btn mod">
+            <div class="leg">2 / 3</div>
+            <button id="goto_uno">Back</button>
+            <button id="step_dos">Next</button>
+          </div>
         </div>
-        <div class="input-group">
-          <button id="SendToFirebase" disabled>Submit</button>
+      </div>
+      <div class="step_tres">
+        <div class="form">
+          <p>在提交之前查看下面的文字，以确保它按照您的显示。请阅读下面的同意声明</p>
+          <div class="input-group">
+            <p id="give_me_title"></p>
+          </div>
+          <div class="input-group">
+            <p id="give_me_name"></p>
+          </div>
+          <div class="input-group auth pb">
+            <label for="auth">
+              <input type="checkbox" id="auth" name="auth">我允许艺术家在此安装中匿名显示我的声明。
+            </label>
+          </div>
+          <div class="input-group btn mod">
+            <div class="leg">3 / 3</div>
+            <button id="goto_dos">Back</button>
+            <button id="SendToFirebase" disabled>Submit</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="langs"><a href="./../en/3.html">English</a><a href="./../es/3.html">Español</a><a href="./../zh/3.html">漢語</a></div>
+    <div class="menutrigger">
+      <div class="trigger"><span></span><span></span><span></span></div>
+    </div>
+    <div class="side">
+      <div class="side-content">
+        <h2>关于</h2>
+        <p><em>片尾的，使我们的地方</em> 是一个参与性的艺术项目，由埃米利奥·马丁内斯·波佩发起，是值得反思和的方式集体记录城市的地方，我们对他们的记忆是分层在我们的身体，语言，并在我们周围的世界。该网站作为汇总这些“信用”的平台。欢迎所有参观2018年10月7日至2019年2月24日皇后区博物馆的游客参加。学分将在入口附近 <em>纽约市全景</em> 展出，直至展览结束，之后将在“卷：皇后国际2018”网站上公开观看。</p>
+        <p>你被邀请纪念一个你认为已经培养了归属感的地方（或地方），而这些地方已不再存在。也就是说，这个地方已被移除，替换，遗忘，或者您与它的关系已经因距离和时间而改变。</p>
+        <p>这是博物馆中的三个售货亭之一，您可以在集体门票中进入。学分安​​装在博物馆的东北角，可以从一楼和二楼夹层观看。可以在下面找到通过博物馆可访问路线的站点地图。</p>
+        <h2>语言</h2>
+        <div class="langs"><a href="./../en/3.html">English</a><a href="./../es/3.html">Español</a>
+          <!--a(href="./../zh/3.html") 漢語-->
+        </div>
+        <h2>地图</h2>
+        <div class="img"><img src="./../images/QM_Map-01.png"></div>
+      </div>
+    </div>
     <div class="message success" id="success">
       <div class="wrapper">
-        <h1>Thanks you!</h1>
-        <p>  Your entry has been added to our database on view in the North-East corner of the museum.</p><em>This message will auto-dismiss in 4 seconds</em>
+        <p>感谢您的提交！您的参赛作品已被添加到博物馆东北角的视野中。</p>
+        <p>此消息将在4秒后自动关闭。</p>
       </div>
     </div>
   </body>
-  <script src="../js/app.js"></script>
+  <script src="../js/zh/app.js"></script>
+  <script src="../js/textarea.js"></script>
 </html>

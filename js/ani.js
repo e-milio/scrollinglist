@@ -41,16 +41,17 @@
                 creditList.appendChild(article);
             }
 
-            $(".playit").on("click", function() {
-                $(this).addClass("hide");
+            setTimeout(function() {
+                console.log("dispara el play");
                 $(".credits").addClass("playme");
                 console.log($(".credits").height());
                 var wiHeight = $(".wrapper").height();
                 var myHeight = $(".credits").height();
-                TweenLite.defaultEase = Power0.easeNone;
-                TweenMax.fromTo(
+                //TweenLite.defaultEase = Power0.easeNone;
+                var tl = new TimelineMax();
+                tl.fromTo(
                     ".credits",
-                    200, {
+                    210, {
                         top: wiHeight
                     }, {
                         top: -myHeight,
@@ -59,13 +60,26 @@
                         repeatDelay: 0
                     }
                 );
-            });
-
-            $(".playit")
-                .promise()
-                .done(function() {
-                    //$('.playit').trigger("click");
+                var lastScrollTop = 0;
+                $(window).scroll(function(event) {
+                    var st = $(this).scrollTop();
+                    if (st > lastScrollTop) {
+                        tl.pause();
+                    } else {
+                        tl.pause();
+                    }
+                    lastScrollTop = st;
                 });
+                $(window).scroll(function(event) {
+                    var st = $(this).scrollTop();
+                    if (st > lastScrollTop) {
+                        tl.play();
+                    } else {
+                        tl.play();
+                    }
+                    lastScrollTop = st;
+                }, 1500);
+            }, 3000);
         }
     });
 })();

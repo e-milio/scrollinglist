@@ -1,11 +1,12 @@
 <?php
 if($_POST){
     $uname = $_POST['uname'];
-    $email = $_POST['uemail'];
+    $to = $_POST['uemail'];
     $title = $_POST['title'];
     $name = $_POST['name'];
     $eol = PHP_EOL;
-    $mensaje = '
+    $message = '
+    
     <html>
     <head>
     <title>ScrollingList</title>
@@ -15,19 +16,19 @@ if($_POST){
     <table>
         <tr>
             <td>
-                <p>Dear ' . $uname . ', </p>
+                <p>Dear '.$uname.',  </p>
                 <p>Thank you for contributing to End Credits for the Places That Make Us at Volumes: Queens International 2018. A copy of your entry can be found below.</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>' . $title . '</p>
-                <p>' . $name . '</p>
+                <p>"'.$title.'"</p>
+                <p>"'.$name.'"</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>Your entry will be on view at the Queens Museum through February 24, 2019 after which it will appear on the online version hosted on the exhibition website. An update with the link will be sent to you at that time.</p>
+                <p>"Your entry will be on view at the Queens Museum through February 24, 2019 after which it will appear on the online version hosted on the exhibition website. An update with the link will be sent to you at that time.</p>
             </td>
         </tr>
         <tr>
@@ -46,18 +47,16 @@ if($_POST){
                 <p>Emilio Martínez Poppe</p>
             </td>
         </tr>
-    </table>
+    </table>z
     </body>
     </html>
     ';
+    $subject = 'End Credits for the Places That Make Us';
+    $headers = 'MIME-Version: 1.0' . $eol;
+    $headers = 'Content-type: text/html; charset=iso-8859-1' . $eol;
+    $headers .= 'To:' . $to . $eol;
+    $headers .= 'From: Emilio Martinez Poppe <emilio@scrollinglist.online>' . $eol;
 
-    $cabeceras  = 'MIME-Version: 1.0' . $eol;
-    $cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . $eol;
-
-    $cabeceras .= 'To:' . $email . $eol;
-    $cabeceras .= 'From: Emilio Martinez Poppe <emilio@scrollinglist.online>' . $eol;
-
-    //send email
-    mail($uname, $email, $title, $name, $mensaje, $cabeceras);
+    mail($to,$subject,$message,$headers);
 }
 ?>
