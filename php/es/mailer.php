@@ -38,7 +38,7 @@ if($_POST){
                 <p><a href="https://endcredits.info/about/en" target="_blank">Haz click aquí para mayor información</a></p>
             </td>
         </tr>
-    </table>z
+    </table>
     </body>
     </html>
     ';
