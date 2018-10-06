@@ -12,13 +12,13 @@
     <div class="this_quest">
       <div class="step_uno active">
         <div class="form">
-          <p>Do you know that feeling when you come across a place that replaced another? Sometimes this feeling is caused by a different place altogether but represent what led to this change. What place are you thinking of?</p>
+          <p>Remember that place you stayed at, frequented, or made you feel like you belonged—that place that is no longer there? What is there today? It could be a new building, a fence preventing access, a different person who lives there, an unexpected renovation, new infrastructure or barren land. What was there before?</p>
           <div class="input-group">
-            <textarea type="text" id="title" name="title" max-length="1500"></textarea>
+            <textarea type="text" id="title" name="title"></textarea>
           </div>
-          <p>What was the name of the place that is no longer there? If this place did not have a name, describe it. What took place there?</p>
+          <p>Take a moment and consider other sites that you know of which remind you of how your place has changed. Perhaps a chain store that replaced a small business, tall buildings that conceal the wear of time, a new public restroom, surveillance cameras, a wellness clinic or a work of art. What do these other sites have in common with, or differ from, what stands in your place that is no longer there.</p>
           <div class="input-group pb">
-            <textarea type="text" id="name" name="name" max-length="1500"></textarea>
+            <textarea type="text" id="name" name="name"></textarea>
           </div>
           <div class="input-group btn">
             <div class="leg">1 / 3</div>
@@ -28,7 +28,7 @@
       </div>
       <div class="step_dos">
         <div class="form">
-          <p>If you would like to receive a copy of your writing along with some information about this project please fill out the fields below. If not, proceed to the next section.</p>
+          <p>If you would like to receive a copy of your writing along with information about this project please fill out the fields below. If not, proceed to the next section.</p>
           <p>Name</p>
           <div class="input-group">
             <input type="text" id="uname" name="uname">
@@ -47,19 +47,19 @@
       </div>
       <div class="step_tres">
         <div class="form">
-          <p>Review the text below before submitting to be sure it appears as you would like it to. Please read the consent statement below. </p>
+          <p>Review the text below before submitting to be sure it appears as you would like it to. Please read the consent statement below.</p>
           <div class="input-group">
             <p id="give_me_title"></p>
           </div>
-          <div class="input-group">
+          <div class="input-group pb">
             <p id="give_me_name"></p>
           </div>
-          <div class="input-group auth pb">
-            <label for="auth">
-              <input type="checkbox" id="auth" name="auth">I allow the artist to display my statement anonymously in this installation.
-            </label>
-          </div>
           <div class="input-group btn mod">
+            <div class="auth">
+              <label for="auth">
+                <input type="checkbox" id="auth" name="auth">I allow the artist to display my statement anonymously in this installation.
+              </label>
+            </div>
             <div class="leg">3 / 3</div>
             <button id="goto_dos">Back</button>
             <button id="SendToFirebase" disabled>Submit</button>
@@ -73,21 +73,27 @@
     <div class="side">
       <div class="side-content">
         <h2>About</h2>
-        <p><em>End Credits for the Places That Make Us</em> is a participatory art project, initiated by Emilio Martínez Poppe, that invites reflection and collective recording of the ways urban places and our memory of them are layered in our bodies, in language, and in the world around us. This website serves as a platform for aggregating these “credits”. All visitors to the Queens Museum from October 7, 2018 to February 24, 2019 are welcome to participate. The credits will be on display near the entrance to the <em>Panorama of the City of New York</em> until the end of the exhibition after which they will be hosted for public view on the <em>Volumes: Queens International 2018</em> website.</p>
-        <p>You are invited to honor a place (or places) that you feel have nurtured a sense of belonging in you and that are no longer there as such. This is to say, this place has been removed, replaced, forgotten, or your relationship to it has changed through distance and time.</p>
-        <p>This is one of three kiosks in the museum where you can make an entry in the collective credits. The credits are installed in the North-East corner of the museum and can be viewed from the first floor and the second floor mezzanine. A site map with accessible routes through the museum can be found below.</p>
+        <p><em>End Credits for the Places That Make Us</em> is a participatory art project, initiated by Emilio Martínez Poppe, that invites reflection and collective recording of the ways urban places and our memory of them are layered in our bodies, in language, and in the world around us. This website serves as a platform for aggregating these “credits”. All visitors to the Queens Museum from October 7, 2018 to February 24, 2019 are welcome to participate. The credits will be on display near the entrance to the <em>Panorama of the City of New York</em> until the end of the exhibition after which they will be hosted for public view on the <em>Queens International 2018: Volumes</em> website.</p>
+        <p>You are invited to evoke and honor a place (or places) that you feel have nurtured a sense of belonging in you and that are no longer there as such. This is to say, this place has been removed, replaced, forgotten, or your relationship to it has changed through distance and time.</p>
+        <p>These are places that have held us in ways that shaped who we are and how we define community. Places that would remember us when we were not there. Places that are now absent but continue to live in us. How do we carry them onward?</p>
+        <p>This is one of three kiosks in the museum where you can make an entry in the collective credits. Each kiosk hosts different prompts which facilitate different way of evoking the places that make us. The credits are installed in the North-East corner of the museum and can be viewed from the second floor mezzanine. A site map with accessible routes through the museum can be found below.</p>
         <h2>Language</h2>
         <div class="langs"><a href="./../en/1.html">English</a><a href="./../es/1.html">Español</a>
           <!--a(href="./../zh/1.html") 漢語-->
         </div>
         <h2>Map</h2>
         <div class="img"><img src="./../images/QM_Map-01.png"></div>
+        <div class="disc">
+          <p>Site design by Emilio Martínez Poppe</p>
+          <p>Web development by Diego Cáceres Cardoza</p>
+          <p>Special thanks to Wilton Martínez and KT Pe Benito</p>
+        </div>
       </div>
     </div>
     <div class="message success" id="success">
       <div class="wrapper">
         <p>Thank you for your submission! Your entry has been added to the credits on view in the North-East corner of the museum.</p>
-        <p>This message will auto-dismiss in 4 seconds</p>
+        <p>This message will auto-dismiss in 4 seconds.</p>
       </div>
     </div>
   </body>

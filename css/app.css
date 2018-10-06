@@ -262,7 +262,7 @@ a:focus, a:visited, a:hover {
 }
 
 .form {
-  min-height: 640px;
+  min-height: 720px;
   width: 100%;
 }
 
@@ -330,11 +330,13 @@ a:focus, a:visited, a:hover {
   margin-top: 0;
 }
 
-.form .input-group.auth {
-  margin-top: 42px;
+.form .input-group .auth {
+  position: absolute;
+  top: -40px;
+  width: 100%;
 }
 
-.form .input-group.auth label {
+.form .input-group .auth label {
   align-items: center;
   display: flex;
   font-family: Helvetica, sans-serif;
@@ -345,7 +347,7 @@ a:focus, a:visited, a:hover {
   text-transform: none;
 }
 
-.form .input-group.auth label input {
+.form .input-group .auth label input {
   background-color: #ffffff;
   border: 2px solid #000000;
   height: 21px;
@@ -354,7 +356,7 @@ a:focus, a:visited, a:hover {
   width: 21px;
 }
 
-.form .input-group.auth label input::before {
+.form .input-group .auth label input::before {
   background: #ffffff;
   border: 2px solid #000000;
   content: "";
@@ -363,7 +365,7 @@ a:focus, a:visited, a:hover {
   width: 17px;
 }
 
-.form .input-group.auth label input:checked::before {
+.form .input-group .auth label input:checked::before {
   background: url("./../images/check.jpg");
   background-position: center center;
 }
@@ -460,6 +462,14 @@ a:focus, a:visited, a:hover {
 
 .form .input-group p#give_me_title {
   margin-top: 49px;
+}
+
+.form.about p a {
+  color: #22c48e;
+}
+
+.form.about p a:hover {
+  text-decoration: underline;
 }
 
 .this_quest {
@@ -626,6 +636,16 @@ a:focus, a:visited, a:hover {
 .side .side-content .img img {
   height: auto;
   width: 100%;
+}
+
+.side .side-content .disc {
+  margin-top: 56px;
+}
+
+.side .side-content .disc p {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .message {

@@ -126,7 +126,7 @@
         };
         $.ajax({
           type: "POST",
-          url: "../php/es/mailer.php",
+          url: "https://endcredits.info/php/es/mailer.php",
           data: data,
           success: function() {
             console.log("email enviado");

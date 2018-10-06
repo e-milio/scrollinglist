@@ -8,26 +8,27 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script src="../js/jquery.min.js"></script>
   </head>
-  <body class="prim">
+  <body class="secun">
     <div class="this_quest">
       <div class="step_uno active">
         <div class="form">
-          <p>Piensa en un lugar donde sentiste un fuerte sentido de pertenencia espacial y que ya no existe. ¿Cuál era su nombre? Si no tuviera nombre, descríbelo. ¿Qué ocurrió allí?</p>
+          <p>¿Recuerdas algún lugar donde viviste, que frecuentabas, o que te dio un sentido de pertenencia—pero que ya no está allí?  ¿Qué historias escuchaste de ese lugar que se quedaron contigo?  ¿Quién contaba esas historias?  Piensa en las cosas que pasaron en ese lugar, quién estaba allí, algún incidente que se ha quedado en tu memoria. ¿Cómo te hiciste parte de esa historia?</p>
           <div class="input-group">
-            <textarea type="text" id="title"></textarea>
+            <textarea type="text" id="title" name="title"></textarea>
           </div>
-          <p>Cuenta una historia al respecto. ¿Puede algo como esto suceder en otro lugar?</p>
+          <p>¿Cómo llevas en ti las historias de ese lugar?  Quizás a través de algunos valores que aprendiste allí, una amistad que nació en ese lugar, nuevas formas de ver las cosas o tal vez un objeto muy significativo.  ¿Con quién compartes esas historias?  ¿El contarlas las hace más significativas?</p>
           <div class="input-group pb">
-            <textarea type="text" id="name"></textarea>
+            <textarea type="text" id="name" name="name"></textarea>
           </div>
-          <div class="input-group">
-            <button id="SendToFirebase" disabled>Siguiente</button>
+          <div class="input-group btn">
+            <div class="leg">1 / 3</div>
+            <button id="step_uno" disabled>Siguiente</button>
           </div>
         </div>
       </div>
       <div class="step_dos">
         <div class="form">
-          <p>Si deseas recibir una copia de tu “crédito” junto con información sobre este proyecto, completa los campos a continuación. Si no, pasa a la siguiente sección.</p>
+          <p>Si deseas recibir una copia de tu “crédito”, además de información sobre el proyecto, por favor completa tus datos. Si no, pasa a la siguiente sección.</p>
           <p>Nombre</p>
           <div class="input-group">
             <input type="text" id="uname" name="uname">
@@ -36,7 +37,7 @@
           <div class="input-group pb">
             <input type="text" id="uemail" name="uemail">
           </div>
-          <u>La  información recogida solo se utiliza para los fines específicos de este proyecto. Ninguna parte de la información será compartida con terceros.</u>
+          <u>La información recogida sólo se usará para los fines de este proyecto. Ninguna parte de tu información será compartida con terceros.</u>
           <div class="input-group btn mod">
             <div class="leg">2 / 3</div>
             <button id="goto_uno">Atrás</button>
@@ -46,19 +47,19 @@
       </div>
       <div class="step_tres">
         <div class="form">
-          <p>Revisa tu texto antes de enviarlo para asegurarte de que aparece como deseas. Por favor lee la declaración de consentimiento que aparece debajo.</p>
+          <p>Revisa tu texto antes de enviarlo para asegurarte de que aparece como deseas. Por favor lee el texto de consentimiento que aparece debajo.</p>
           <div class="input-group">
             <p id="give_me_title"></p>
           </div>
-          <div class="input-group">
+          <div class="input-group pb">
             <p id="give_me_name"></p>
           </div>
-          <div class="input-group auth pb">
-            <label for="auth">
-              <input type="checkbox" id="auth" name="auth">Permito que el artista muestre mi declaración de forma anónima en esta instalación.
-            </label>
-          </div>
           <div class="input-group btn mod">
+            <div class="auth">
+              <label for="auth">
+                <input type="checkbox" id="auth" name="auth">Autorizo al artista a presentar mi declaración en forma anónima en esta instalación.
+              </label>
+            </div>
             <div class="leg">3 / 3</div>
             <button id="goto_dos">Atrás</button>
             <button id="SendToFirebase" disabled>Enviar</button>
@@ -72,24 +73,28 @@
     <div class="side">
       <div class="side-content">
         <h2>Acerca del proyecto</h2>
-        <p><em>End Credits for the Places That Make Us (Créditos finales de los lugares que nos hacen)</em> es un proyecto de arte participativo iniciado por Emilio Martínez Poppe que invita a la reflexión y al registro colectivo de las formas en que los lugares urbanos se ubican en nuestra memoria, en nuestros cuerpos, en nuestro lenguaje y en el mundo alrededor nuestro. Este sitio web sirve como plataforma para agregar estos "créditos". Todos los visitantes al Museo de Queens desde el 7 de octubre de 2018 hasta el 24 de febrero de 2019 están invitados a participar. Los créditos estarán en exhibición cerca de la entrada al <em>Panorama de la Ciudad de Nueva York</em> hasta el final de la muestra, y luego se publicarán en el sitio web 
-          <emVolumes>
-            <Queens>International 2018</Queens>
-          </emVolumes>.
+        <p><em>End Credits for the Places That Make Us (Créditos finales de los lugares que nos hacen)</em> es un proyecto de arte participativo iniciado por Emilio Martínez Poppe que invita a la reflexión y al registro colectivo de las maneras en que los lugares urbanos, y nuestras memorias de ellos, se configuran en nuestros cuerpos, en nuestro lenguaje y en el mundo alrededor nuestro. Este sitio web sirve como plataforma para agregar estos "créditos". Todos los visitantes al Queens Museum entre el 7 de octubre de 2018 y el 24 de febrero de 2019 están invitados a participar. Los créditos estarán en exhibición cerca de la entrada al  
+          <Panorama>of the City of New York</Panorama> hasta el final de la muestra, y luego se publicarán en el sitio web <em>Queens International 2018: Volumes</em>.
         </p>
-        <p>Te invitamos a honrar un lugar (o lugares) que sientes que ha alimentado un sentido de pertenencia en ti y que ya no está presente como tal. Es decir, que el lugar ha sido eliminado, reemplazado, olvidado o que tu relación con él ha cambiado con la distancia y el tiempo.</p>
-        <p>Este es uno de los tres quioscos en el museo donde puedes crear una entrada en los créditos colectivos. Los créditos están instalados en la esquina noreste del museo y se pueden ver desde el primer piso y la mezzanine del segundo piso. Debajo incluimos un mapa del lugar con rutas de acceso.</p>
+        <p>Te invitamos a evocar y honrar algún lugar (o lugares) que alimentó en ti un sentido de pertenencia, y que ya no está presente como tal. Es decir, que ese lugar ha sido eliminado, reemplazado, olvidado o que tu relación con él ha cambiado con la distancia y el tiempo.</p>
+        <p>Se trata de lugares que nos han acogido y que han moldeado la manera como nos vemos a nosotros mismos, que han configurado nuestro sentido de comunidad. Lugares que quizá nos recuerdan cuando no estamos allí. Lugares que pueden estar ausentes pero que siguen vivos en nosotros. ¿Cómo los llevamos en nosotros?</p>
+        <p>Esta es una de tres estaciones en el museo donde puedes crear e ingresar una entrada en los créditos colectivos. Cada estación presenta diferentes tópicos que invitan a diferentes formas de evocar los lugares que nos hacen. Los créditos están instalados en la esquina noreste del museo y se pueden ver desde el primer piso y la mezzanine del segundo piso. Debajo incluimos un mapa del lugar con rutas de acceso.</p>
         <h2>Idioma</h2>
         <div class="langs"><a href="./../en/2.html">English</a><a href="./../es/2.html">Español</a>
           <!--a(href="./../zh/2.html") 漢語-->
         </div>
         <h2>Mapa</h2>
-        <div class="img"><img src="./../images/QM_Map-01.png"></div>
+        <div class="img"><img src="./../images/QM_Map-02.png"></div>
+        <div class="disc">
+          <p>Diseño web por Emilio Martínez Poppe</p>
+          <p>Desarrollo web por Diego Cáceres Cardoza</p>
+          <p>Gracias a Wilton Martínez y KT Pe Benito</p>
+        </div>
       </div>
     </div>
     <div class="message success" id="success">
       <div class="wrapper">
-        <p>¡Gracias por tu presentación! Tu entrada se ha agregado a los créditos que se exhiben en la esquina noreste del museo. </p>
+        <p>¡Gracias por tu contribución! Tu entrada se ha agregado a los créditos que se exhiben en la esquina noreste del museo.</p>
         <p>Este mensaje se cerrará automáticamente en 4 segundos. </p>
       </div>
     </div>
