@@ -51,7 +51,7 @@
                 var tl = new TimelineMax();
                 tl.fromTo(
                     ".credits",
-                    210, {
+                    500, {
                         top: wiHeight
                     }, {
                         top: -myHeight,
